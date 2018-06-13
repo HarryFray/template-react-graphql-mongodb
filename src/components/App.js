@@ -1,20 +1,13 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-
+import React from 'react';
 import Game from '../containers/Game';
 
-class App extends Component {
-  constructor() {
-    super();
-  }
-  render() {
-    return (
-      <div>
-        Live DraftX
+function App() {
+  return (
+    <div>
+      Live DraftX
       <Game />
-      </div>
-    );
-  }
+    </div>
+  );
 }
 export default App;
 

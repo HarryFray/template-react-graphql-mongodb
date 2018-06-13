@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 
 class Game extends Component {
   renderGames() {
-    return this.props.games.map(game => {
-      return (
-        <li key={game.id}>{game.game}</li>
-      )
-    })
+    return this.props.games.map(game => (
+      <li key={game.id}>{game.game}</li>
+    ));
   }
 
   render() {
@@ -15,14 +13,14 @@ class Game extends Component {
       <ul>
         {this.renderGames()}
       </ul>
-    )
+    );
   }
 }
 
 function mapStateToProps(state) {
   return {
-    games: state.games
-  }
+    games: state.games,
+  };
 }
 
-export default connect(mapStateToProps)(Game)
+export default connect(mapStateToProps)(Game);

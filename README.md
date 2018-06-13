@@ -2,11 +2,11 @@
 In person live drafting interface for Fantasy Football
 
 ## Overview
-This application was built with **React**, **Node** and **Express**. 
+This application was built with **React** and **Node**. 
 
 Additional Technologies: 
 * [Redux](https://redux.js.org/) - Client-side state management
-* [React DnD](http://react-dnd.github.io/react-dnd/) - Drag and Drop for React.
+* [React DnD](http://react-dnd.github.io/react-dnd/) - Drag and Drop for React
 
 
 ## Getting Started

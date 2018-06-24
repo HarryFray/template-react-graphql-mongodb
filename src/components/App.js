@@ -1,16 +1,14 @@
 import React from 'react';
-import Game from '../containers/Game';
+import '../style/style.css';
+
 
 function App() {
   return (
-    <div>
+    <div className="test">
       Live DraftX
-      <Game />
     </div>
   );
 }
-export default App;
 
-// const wrapper = document.getElementById("root");
-// wrapper ? ReactDOM.render(<App />, wrapper) : false;
+export default App;
 

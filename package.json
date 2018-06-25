@@ -17,9 +17,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "start": "concurrently --kill-others \"webpack-dev-server --open --mode development\" \"nodemon ./src/server/server.js --watch\"",
+    "dev": "concurrently \"npm run server-dev\" \"npm run react-dev\"",
     "react-dev": "webpack-dev-server --open --mode development",
-    "server-dev": "nodemon ./src/server/server.js --watch",
+    "server-dev": "nodemon ./src/server/index.js --watch",
     "lint": "./node_modules/.bin/eslint ./src**",
     "lintFix": "./node_modules/.bin/eslint ./src** --fix"
   },
@@ -28,6 +28,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
     "concurrently": "^3.6.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
@@ -43,11 +44,11 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "cors": "^2.8.4",
     "css-loader": "^0.28.11",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "nodemon": "^1.17.5",
+    "path": "^0.12.7",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "style-loader": "^0.21.0"

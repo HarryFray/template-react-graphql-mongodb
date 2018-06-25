@@ -5,7 +5,7 @@ import axios from 'axios';
 export default class App extends Component {
 
   onClick = () => {
-    axios.get('http://localhost:3000/')
+    axios.get('/api/rest')
       .then(function (response) {
         console.log(response.data);
       })

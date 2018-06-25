@@ -17,7 +17,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development",
+    "react-dev": "webpack-dev-server --open --mode development",
+    "server-dev": "nodemon ./src/server/server.js --watch",
     "lint": "./node_modules/.bin/eslint ./src**",
     "lintFix": "./node_modules/.bin/eslint ./src** --fix"
   },
@@ -41,6 +42,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "css-loader": "^0.28.11",
     "dotenv": "^6.0.0",
+    "nodemon": "^1.17.5",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "style-loader": "^0.21.0"

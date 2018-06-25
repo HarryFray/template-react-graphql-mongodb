@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import '../style/style.css';
 import axios from 'axios';
 
-export default class App extends Component {
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
+
+class App extends Component {
+
 
   onClick = () => {
-    axios.get('/api')
+    axios.get('/api/rest')
       .then(function (response) {
         console.log(response.data);
       })
@@ -14,7 +18,7 @@ export default class App extends Component {
       });
   }
 
-  render() {
+  render(props) {
     return (
       <div className="test">
         <div>
@@ -25,5 +29,15 @@ export default class App extends Component {
     );
   }
 }
+
+const query = gql`
+{
+  company(id:"1"){
+    name
+  }
+} 
+`;
+
+export default graphql(query)(App);
 
 

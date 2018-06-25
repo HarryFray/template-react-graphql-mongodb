@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "id": "41",
+      "firstName": "The Fray",
+      "age": 40,
+      "companyId": "2"
+    },
+    {
+      "firstName": "Julia",
+      "age": 25,
+      "id": "Mal5Wku"
+    },
+    {
+      "firstName": "dope",
+      "age": 58,
+      "id": "cwL~Fw_"
+    },
+    {
+      "firstName": "asdf",
+      "age": 58,
+      "id": "HwRrwu8"
+    },
+    {
+      "firstName": "googs",
+      "age": 58,
+      "companyId": "1",
+      "id": "3N0EyVK"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "name": "Apple",
+      "description": "iphone"
+    },
+    {
+      "id": "2",
+      "name": "Google",
+      "description": "search"
+    }
+  ]
+}

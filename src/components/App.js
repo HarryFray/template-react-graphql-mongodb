@@ -5,7 +5,7 @@ import axios from 'axios';
 export default class App extends Component {
 
   onClick = () => {
-    axios.get('/api/rest')
+    axios.get('/api')
       .then(function (response) {
         console.log(response.data);
       })

@@ -19,11 +19,14 @@ class App extends Component {
   }
 
   render(props) {
+    console.log(this.props.data)
+    if (this.props.data.loading) return (<div>loading</div>)
     return (
       <div className="test">
         <div>
           React GraphQL MongoDB template
-      </div>
+          {this.props.data.company.name}
+        </div>
         <button onClick={this.onClick.bind(this)} >Test Route</button>
       </div>
     );

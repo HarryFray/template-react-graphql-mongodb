@@ -1,5 +1,5 @@
 const schema = require('./schema');
-
+const db = require('./db/index.js');
 const express = require('express');
 const expressGraphQL = require('express-graphql');
 
@@ -23,6 +23,8 @@ apiRouter.use('/graphql', expressGraphQL({
 restRouter.route('/')
   .get((req, res) => res.json({ getRest: true }))
   .post((req, res) => res.json({ postRest: true }))
+
+
 
 // subroute api/ infront of this route
 apiRouter.get('*', (req, res) => res.json({ api: true }));

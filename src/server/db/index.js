@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 mongoose.connect('mongodb://nick:levi123@ds219191.mlab.com:19191/react-graphql-mongo-template');
 mongoose.Promise = global.Promise;
 

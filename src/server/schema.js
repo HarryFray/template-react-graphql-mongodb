@@ -1,5 +1,5 @@
 const graphql = require('graphql');
-const axios = require('axios');
+const mongoose = require('mongoose');
 const employeeModal = require('./db/employee.model');
 const {
   GraphQLObjectType,
@@ -7,12 +7,17 @@ const {
   GraphQLInt,
   GraphQLSchema,
   GraphQLList,
-  GraphQLNonNull
+  GraphQLNonNull,
+  GraphQLID
 } = graphql;
+
+const Employee = mongoose.model('employee');
+
 
 const EmployeeType = new GraphQLObjectType({
   name: 'Employee',
   fields: () => ({
+    id: { type: GraphQLID },
     name: { type: GraphQLString },
     info: { type: GraphQLString },
   })
@@ -20,15 +25,21 @@ const EmployeeType = new GraphQLObjectType({
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
-  fields: {
+  fields: () => ({
     employees: {
-      type: EmployeeType,
-      args: { name: { type: GraphQLString }, info: { type: GraphQLString } },
-      resolve(parentValue, args) {
-        return employeeModal.retrieveEmployees();
+      type: new GraphQLList(EmployeeType),
+      resolve() {
+        return Employee.find({});
       }
     },
-  }
+    employee: {
+      type: EmployeeType,
+      args: { id: { type: new GraphQLNonNull(GraphQLID) } },
+      resolve(parentValue, { id }) {
+        return Employee.findById(id);
+      }
+    }
+  })
 });
 
 const mutation = new GraphQLObjectType({
@@ -41,7 +52,7 @@ const mutation = new GraphQLObjectType({
         info: { type: GraphQLString }
       },
       resolve(parentValue, { name, info }) {
-        return employeeModal.insertNewEmployee({ name, info })
+        return new Employee({ name, info }).save();
       }
     }
   }

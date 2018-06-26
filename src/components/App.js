@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../style/style.css';
-import axios from 'axios';
 
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
@@ -19,13 +18,12 @@ class App extends Component {
   }
 
   render(props) {
-    console.log(this.props.data)
     if (this.props.data.loading) return (<div>loading</div>)
     return (
-      <div className="test">
+      <div>
         <div>
           React GraphQL MongoDB template
-          {this.props.data.company.name}
+          {this.props.data.employees[0].name}
         </div>
         <button onClick={this.onClick.bind(this)} >Test Route</button>
       </div>
@@ -35,7 +33,7 @@ class App extends Component {
 
 const query = gql`
 {
-  company(id:"1"){
+  employees{
     name
   }
 } 

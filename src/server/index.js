@@ -14,12 +14,12 @@ apiRouter.use('/rest', restRouter);
 
 apiRouter.use('/graphql', expressGraphQL({
   schema,
-  graphiql: true
+  graphiql: true,
 }));
 
 restRouter.route('/')
   .get((req, res) => res.json({ getRest: true }))
-  .post((req, res) => res.json({ postRest: true }))
+  .post((req, res) => res.json({ postRest: true }));
 
 app.listen(8080, () => {
   console.log('API local 8080');

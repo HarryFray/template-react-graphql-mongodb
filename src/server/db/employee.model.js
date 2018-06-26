@@ -4,11 +4,11 @@ const EmployeeSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   info: {
-    type: String
-  }
+    type: String,
+  },
 });
 
 const Employee = mongoose.model('employee', EmployeeSchema);

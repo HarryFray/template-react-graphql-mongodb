@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
 import App from './components/App';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
+
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/api/graphql',
@@ -11,9 +13,13 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path='/' component={App} />
+      </Switch>
+    </BrowserRouter>
   </ApolloProvider>
 
-  , document.getElementById('root'),
+  , document.getElementById('root')
 );
 

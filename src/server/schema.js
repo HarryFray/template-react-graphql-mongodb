@@ -1,6 +1,6 @@
 const graphql = require('graphql');
 const mongoose = require('mongoose');
-const employeeModal = require('./db/employee.model');
+const employeeModal = require('../db/employee.model');
 
 const {
   GraphQLObjectType,

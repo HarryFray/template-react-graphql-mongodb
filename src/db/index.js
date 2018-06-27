@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://nick:levi123@ds219191.mlab.com:19191/react-graphql-mongo-template');
+require('dotenv').config()
+
+mongoose.connect(process.env.DB_PASS);
 mongoose.Promise = global.Promise;
 
 mongoose.connection
